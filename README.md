@@ -1,11 +1,11 @@
 
-# Feed Style [<img alt="Feed.Style Logo" src="https://www.feed.style/favicon.svg" height="96" align="right" />](https://www.feed.style/)
+# XML Style [<img alt="XML.Style Logo" src="docs/favicon.svg" height="96" align="right" />](https://www.xml.style/)
 
-[Feed Style](https://www.feed.style/) helps you make your [RSS and Atom feeds](https://en.wikipedia.org/wiki/Web_feed) look nice.
+[XML Style](https://www.xml.style/) helps you make your XML files look nice for people accessing them in a browser.
 
 ## Using
 
-Instructions and links for all the different resources are on the [Feed Style website](https://www.feed.style/).
+Instructions and links for all the different resources are on the [XML Style website](https://www.xml.style/).
 
 ## Running
 
