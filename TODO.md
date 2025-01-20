@@ -1,5 +1,16 @@
 # To Do
 
+ - [ ] Rss
+ - [ ] [Podcast Rss](https://taylor.town/xml-sql)
+ - [ ] Atom
+ - [ ] Spdx
+ - [ ] Opml
+ - [ ] [RDF](https://www.w3.org/TR/rdf-syntax-grammar/)
+ - [ ] [Wikipedia list](https://en.wikipedia.org/wiki/List_of_XML_markup_languages)
+ - [ ] Per format: sample
+ - [ ] Per format: test page (form asks for url)
+
+
 - [ ] Federo font
 - [ ] FAQ: how to tell if I have atom or rss
 - [ ] test on more browsers

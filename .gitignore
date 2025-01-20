@@ -5,6 +5,7 @@
 crash.log
 dist/
 .DS_Store
+Gemfile.lock
 .env
 .idea/
 .jekyll-metadata
