@@ -4,16 +4,16 @@ h1: XML Styling with XSLT
 formats:
   - title: RSS/Atom Feeds
     icon: https://www.rss.style/favicon.svg
-    text: RSS and Atom news feeds are a great way to keep up with your favorite sites.
+    text: RSS and Atom news feeds are a great way to get updates from your favorite sites.
     url: https://www.rss.style/
   - title: Sitemaps
     icon: https://www.sitemap.style/favicon.svg
-    text: Sitemaps help search engines index your site.
+    text: "Sitemaps (`sitemap.xml` files) help search engines index your site."
     url: https://www.sitemap.style/
   - title: Outlines
     icon: https://opml.xml.style/favicon.svg
     url: /opml/
-    text: Outlines are a great way to share the sites in your news feed.
+    text: "[OPML Outlines](https://en.wikipedia.org/wiki/OPML) are a great way to share the sites in your news feed."
 
 soon:
   - OpenSearch descriptions
@@ -42,7 +42,7 @@ soon:
                     {{format.title}}
                 </h3>
                 <div class="card-text px-3 py-2">
-                    text
+                    {{format.text | markdownify}}
                 </div>
                 <div class="card-footer">
                     <a className="btn btn-outline-secondary" href="{{format.url}}" rel="nofollow">Instructions</a>
@@ -74,7 +74,7 @@ soon:
 Add a line in the middle so it looks like:
 <pre class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-stylesheet type="text/xsl" href="my-downloaded-file.xslt"?&gt;
+<b title="This is the added line">&lt;?xml-stylesheet type="text/xsl" href="my-downloaded-file.xslt"?&gt;</b>
 &lt;data-depends-on-type&gt;
 ...
 </pre>
@@ -84,8 +84,8 @@ Add a line in the middle so it looks like:
 <p>A couple key points that I learned the hard way:</p>
 
 <ul>
-    <li>You must serve the page with the content type <code>text/xml</code>.</li>
-    <li>The stylesheet must be on the same host as the XML file.</li>
+    <li class="py-1">You must serve the page with the content type <code>text/xml</code>.</li>
+    <li class="py-1">The stylesheet must be on the same host as the XML file.</li>
 </ul>
 
 <p>
