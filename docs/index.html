@@ -4,11 +4,11 @@ h1: XML Styling with XSLT
 formats:
   - title: RSS/Atom Feeds
     icon: https://www.rss.style/favicon.svg
-    text: RSS and Atom news feeds are a great way to get updates from your favorite sites.
+    text: RSS and Atom [news feeds](https://en.wikipedia.org/wiki/Web_feed) are a great way to get updates from your favorite sites.
     url: https://www.rss.style/
   - title: Sitemaps
     icon: https://www.sitemap.style/favicon.svg
-    text: "Sitemaps (`sitemap.xml` files) help search engines index your site."
+    text: "[Sitemaps](https://en.wikipedia.org/wiki/Sitemaps) (`sitemap.xml` files) help search engines index your site."
     url: https://www.sitemap.style/
   - title: Outlines
     icon: https://opml.xml.style/favicon.svg
@@ -53,7 +53,7 @@ soon:
     {% endfor %}
 </div>
 
-<h2>How do I use it?</h2>
+<h2 name="how">How do I use it?</h2>
 
 <p>
     You need to have a XSLT stylesheet along with your <code>.xml</code> file. Download one of the ones above or
@@ -62,7 +62,6 @@ soon:
 
 <p>
     At the top of your XML file, it will look like:
-
 <pre class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;data-depends-on-type&gt;
@@ -78,8 +77,9 @@ Add a line in the middle so it looks like:
 &lt;data-depends-on-type&gt;
 ...
 </pre>
+</p>
 
-<h2>Gotchas</h2>
+<h2 name="warn">Gotchas</h2>
 
 <p>A couple key points that I learned the hard way:</p>
 
@@ -99,5 +99,3 @@ Add a line in the middle so it looks like:
     <li class="py-1"><a href="{{link.url}}">{{link.title}}</a></li>
     {% endfor %}
 </ul>
-
-{% include share.html %}
