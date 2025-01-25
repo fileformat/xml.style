@@ -6,14 +6,17 @@ formats:
     icon: https://www.rss.style/favicon.svg
     text: RSS and Atom [news feeds](https://en.wikipedia.org/wiki/Web_feed) are a great way to get updates from your favorite sites.
     url: https://www.rss.style/
+    demo: https://www.fileformat.info/news/rss.xml
   - title: Sitemaps
     icon: https://www.sitemap.style/favicon.svg
     text: "[Sitemaps](https://en.wikipedia.org/wiki/Sitemaps) (`sitemap.xml` files) help search engines index your site."
     url: https://www.sitemap.style/
+    demo: /demo/sitemap.xml
   - title: Outlines
-    icon: https://opml.xml.style/favicon.svg
+    icon: https://opml-viewer.fileformat.info/favicon.svg
     url: /opml/
     text: "[OPML Outlines](https://en.wikipedia.org/wiki/OPML) are a great way to share the sites in your news feed."
+    demo: /demo/opml.xml
 
 soon:
   - OpenSearch descriptions
@@ -44,8 +47,9 @@ soon:
                 <div class="card-text px-3 py-2">
                     {{format.text | markdownify}}
                 </div>
-                <div class="card-footer">
-                    <a className="btn btn-outline-secondary" href="{{format.url}}" rel="nofollow">Instructions</a>
+                <div class="card-footer d-flex justify-content-between">
+                    <a class="btn btn-outline-primary btn-sm" href="{{format.url}}">Instructions</a>
+                    <a class="btn btn-outline-primary btn-sm" href="{{format.demo}}">Demo</a>
                 </div>
             </div>
         </div>

@@ -38,3 +38,4 @@ Contributions are welcome!  Please follow the standard Github [Fork & Pull Reque
 
 * [Tim Holman](https://tholman.com/github-corners/) - Github corner
 * [Taco de Wolff](https://github.com/tdewolff/minify) - minify
+* [IndieWeb](https://indieweb.org/OPML) - initial XSLT for OPML
