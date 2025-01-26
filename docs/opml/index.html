@@ -2,6 +2,9 @@
 title: OPML XSLT Stylesheets
 h1: OPML XSLT Stylesheets
 links:
+  - title: Wikipedia OPML page
+    url: https://en.wikipedia.org/wiki/OPML
+    text: OPML overview.
   - title: OPML Specification
     url: https://opml.org/spec2.opml
     text: The official OPML 2.0 specification.
@@ -13,4 +16,41 @@ links:
     text: A list of apps that support OPML.
 ---
 
-<p>Instructions coming soon!</p>
+<h2>What is this?</h2>
+
+<p>
+    <a href="https://en.wikipedia.org/wiki/OPML">OPML</a> (Outline Processor Markup Language) is a simple XML format for outlines.  It is commonly used to share lists of
+    RSS feeds and podcasts.
+</p>
+
+<h2>How do I use it?</h2>
+
+<p>
+    Download one of the <a href="#available_styles">available styles</a> and save it in the same directory as your OPML file.
+</p>
+
+<p>
+    Add a line at the top of your OPML file.  <a href="/index.html#how">More details</a>
+</p>
+
+
+<h2 id="available_styles">Available Styles</h2>
+
+<ul>
+    <li class="py-1"><a href="plain-opml.xslt">plain-opml.xslt</a> - plain HTML (using <code>&lt;details&gt;/&lt;summary&gt;</code>) with <a href="https://watercss.kognise.dev/">water.css</a> classless CSS styling.</li>
+    <li class="py-1"><a href="linked-opml.xslt">linked-opml.xslt</a> - simple, with a button to go the <a
+            href="https://opml-viewer.fileformat.info/">OPML Viewer</a> at the top.  <a class="btn btn-sm btn-outline-primary" href="/demo/opml.xml">Demo</a></li>
+    <li class="py-1"><a href="redirect-opml.xslt">redirect-opml.xslt</a> - JavaScript redirect to the <a href="https://opml-viewer.fileformat.info/">OPML
+            Viewer</a> with fallback to plain.</li>
+</ul>
+
+<p>
+    <a href="https://github.com/fileformat/xml.style/tree/main/docs/opml">Source</a>
+</p>
+
+<h2>Links</h2>
+<ul>
+    {%- for link in site.data.links %}
+    <li class="py-1"><a href="{{link.url}}">{{link.title}}</a></li>
+    {% endfor %}
+</ul>

@@ -26,7 +26,8 @@
 					<form method="get" action="https://opml-viewer.fileformat.info/view.html" id="viewform">
 						<input type="hidden" name="url" id="viewUrl" value="" />
 						<!-- customize by adding more inputs with the viewer parameters -->
-						 Open in the <button>OPML Viewer</button> (requires JavaScript). </form>
+						Open in the <button>OPML Viewer</button> (requires JavaScript).
+					</form>
 				</p>
 				<p>
 					<time>

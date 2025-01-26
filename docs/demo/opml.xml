@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf8"?>
-<?xml-stylesheet type="text/xsl" href="/opml/simple-opml.xslt"?>
+<?xml-stylesheet type="text/xsl" href="/opml/linked-opml.xslt"?>
 <opml version="1.1">
     <head>
         <title>Demo for OPML</title>
