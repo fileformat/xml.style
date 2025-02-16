@@ -20,7 +20,7 @@ links:
 
 <p>
     <a href="https://en.wikipedia.org/wiki/OPML">OPML</a> (Outline Processor Markup Language) is a simple XML format for outlines.  It is commonly used to share lists of
-    RSS feeds and podcasts.
+    podcasts and Atom/RSS news feeds.
 </p>
 
 <h2>How do I use it?</h2>
@@ -46,10 +46,15 @@ links:
 
 <p>
     <a href="https://github.com/fileformat/xml.style/tree/main/docs/opml">Source</a>
+    | <a href="https://opml-viewer.fileformat.info/">OPML Viewer</a>
+    | <a href="viewer-parameters.html">OPML Viewer Parameters</a>
 </p>
 
 <h2>Links</h2>
 <ul>
+    {%- for link in page.links %}
+    <li class="py-1"><a href="{{link.url}}">{{link.title}}</a>{% if link.text %} - {{link.text}}{% endif %}</li>
+    {% endfor %}
     {%- for link in site.data.links %}
     <li class="py-1"><a href="{{link.url}}">{{link.title}}</a></li>
     {% endfor %}
