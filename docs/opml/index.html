@@ -59,3 +59,10 @@ links:
     <li class="py-1"><a href="{{link.url}}">{{link.title}}</a></li>
     {% endfor %}
 </ul>
+
+<h2 id="demos">Demos</h2>
+<ul>
+    {%- for entry in site.data.opml %}
+    <li><a href="https://opml-viewer.fileformat.info/view.html?showmode=Y&amp;showlanguage=Y&amp;showexit=Y&amp;url={{entry.url | url_encode}}">{{entry.title}}</a></li>
+    {% endfor %}
+</ul>

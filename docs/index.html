@@ -16,7 +16,8 @@ formats:
     icon: https://opml-viewer.fileformat.info/favicon.svg
     url: /opml/
     text: "[OPML Outlines](https://en.wikipedia.org/wiki/OPML) are a great way to share the sites in your news feed."
-    demo: /demo/opml.xml
+    demo: /opml/#demos
+    demo_text: "Demos"
 
 soon:
   - OpenSearch descriptions
@@ -49,7 +50,7 @@ soon:
                 </div>
                 <div class="card-footer d-flex justify-content-between">
                     <a class="btn btn-outline-primary btn-sm" href="{{format.url}}">Instructions</a>
-                    <a class="btn btn-outline-primary btn-sm" href="{{format.demo}}">Demo</a>
+                    <a class="btn btn-outline-primary btn-sm" href="{{format.demo}}">{% if format.demo_text %}{{format.demo_text}}{% else %}Demo{% endif %}</a>
                 </div>
             </div>
         </div>
