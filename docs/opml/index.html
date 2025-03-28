@@ -63,6 +63,6 @@ links:
 <h2 id="demos">Demos</h2>
 <ul>
     {%- for entry in site.data.opml %}
-    <li><a href="https://opml-viewer.fileformat.info/view.html?showdebug=1&amp;showmode=1&amp;showlanguage=1&amp;showexit=1&amp;url={{entry.url | url_encode}}&amp;return={{site.production_url | url_encode}}{{"/opml/#demos" | url_encode}}">{{entry.title}}</a>{% if entry.notes %} - {{entry.notes | strip | markdownify | replace: "<p>", "" | replace: "</p>", "" | strip}}{% endif %}</li>
+    <li class="py-1"><a href="https://opml-viewer.fileformat.info/view.html?showdebug=1&amp;showmode=1&amp;showlanguage=1&amp;showexit=1&amp;url={{entry.url | url_encode}}&amp;return={{site.production_url | url_encode}}{{"/opml/#demos" | url_encode}}">{{entry.title}}</a>{% if entry.notes %} - {{entry.notes | strip | markdownify | replace: "<p>", "" | replace: "</p>", "" | strip}}{% endif %}</li>
     {% endfor %}
 </ul>
