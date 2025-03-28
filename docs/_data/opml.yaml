@@ -1,0 +1,72 @@
+# OPML demo links
+
+- title: Dan Q's Blogroll
+  url: https://danq.me/blogroll.xml
+  web: https://danq.me/
+  notes: nice outline
+
+- title: Dave Winer's Blogroll
+  url: https://feedland.social/opml?catname=blogroll&screenname=davewiner
+  web: http://scripting.com/
+  notes: flat
+
+- title: Dave Winer's About Page
+  url: https://davewiner.com/davewiner.opml?format=opml
+  web: https://davewiner.com/davewiner.opml
+  notes: Not a blogroll, but an About page as an outline
+
+- title: Hacker News Blogs
+  url: https://blogs.hn/blogs.hn.opml
+  web: https://blogs.hn/
+  notes: flat
+
+- title: Kilim Choi's Engineering Blogs
+  url: https://raw.githubusercontent.com/kilimchoi/engineering-blogs/refs/heads/master/engineering_blogs.opml
+  source: https://github.com/kilimchoi/engineering-blogs/
+
+- title: Knut Magnus Aasrud's Blogroll
+  url: https://kmaasrud.com/blogroll.xml
+  source: https://kmaasrud.com/blog/opml-is-underrated.html
+  notes:  The [original](https://kmaasrud.com/blogroll.xml) has a stylesheet!
+
+- title: Louis Lazaris's Front-end Feeds
+  url: https://raw.githubusercontent.com/impressivewebs/frontend-feeds/refs/heads/master/frontend-feeds.opml
+  web: https://github.com/impressivewebs/frontend-feeds/blob/master/frontend-feeds.opml
+  notes: nice outline
+
+- title: Maya's subscriptions
+  url: https://maya.land/blogroll.opml
+  source: https://news.ycombinator.com/item?id=31200809
+  notes: long outline
+
+- title: OpenStack Planet
+  url: https://opendev.org/openstack/openstack-planet/raw/branch/master/planet-openstack-org.opml
+  source: https://alexsci.com/rss-blogroll-network/blogrolls/
+
+- title: Planet GNOME
+  url: https://planet.gnome.org/opml.xml
+  web: https://planet.gnome.org/
+
+- title: Programming Blogs from Awesome RSS
+  url: https://raw.githubusercontent.com/spians/awesome-RSS-feeds/master/recommended/with_category/Programming.opml
+  source: https://github.com/plenaryapp/awesome-rss-feeds
+
+- title: Robert Alexander's Blogroll Network
+  url: https://alexsci.com/rss-blogroll-network/opml.xml
+  web: https://alexsci.com/rss-blogroll-network/
+  notes: Almost 15,000 feeds, so performance is poor.  It does load eventually.
+
+- title: Sharjeel Sayed's Subscriptions
+  url: https://raw.githubusercontent.com/sharjeelsayed/learn.sharjeelsayed.com/master/inoreader_sharjeelsayed_subscriptions.xml
+  source: https://github.com/sharjeelsayed/learn.sharjeelsayed.com/
+  notes: nice outline
+
+- title: Blogs from India via Awesome RSS
+  url: https://raw.githubusercontent.com/spians/awesome-RSS-feeds/master/countries/with_category/India.opml
+  source: https://github.com/plenaryapp/awesome-rss-feeds
+
+
+# good source of blogrolls: https://alexsci.com/rss-blogroll-network/blogrolls/
+# from 2018: https://news.ycombinator.com/item?id=18323512
+# not clean enough: https://gist.github.com/Josh-Tucker/030b8cba6557927a27f1c7e6da56a17f
+# already have a similar one: https://github.com/outcoldman/hackernews-personal-blogs
