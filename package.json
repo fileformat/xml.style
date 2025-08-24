@@ -11,5 +11,8 @@
         "liquidjs": "^10.10.0",
         "luxon": "^3.4.4",
         "xml-formatter": "^3.6.2"
-    }
+    },
+	"engines": {
+		"node": ">=22"
+	}
 }
