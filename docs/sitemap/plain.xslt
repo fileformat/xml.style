@@ -6,7 +6,7 @@
     >
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
     <xsl:template match="/">
-<xsl:message>Powered by <a href="https://www.xml.style/">XML.Style</a></xsl:message>
+<xsl:message>Powered by <a href="https://www.xml.style/sitemap/">XML.Style</a></xsl:message>
 
 
 <!-- get the hostname from the first url/loc -->
@@ -17,8 +17,10 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="referrer" content="unsafe-url" />
                 <title>Sitemap for <xsl:value-of select="$hostname"/></title>
+                <link rel="stylesheet" href="https://www.xml.style/css/pico.classless.min.css" />
             </head>
             <body>
+                <main class="container">
                 <h1>Pages on <xsl:value-of select="$hostname"/></h1>
                 <ul>
                     <xsl:for-each select="sitemap:urlset/sitemap:url">
@@ -33,6 +35,7 @@
                     </xsl:for-each>
                 </ul>
                 <p><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/> pages</p>
+                </main>
             </body>
         </html>
     </xsl:template>
