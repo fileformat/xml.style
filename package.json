@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "dev": "astro dev",
+        "dev": "astro dev --port 4000",
         "build": "astro build",
         "preview": "astro preview"
     },

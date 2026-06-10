@@ -175,9 +175,9 @@ export const opmlDemoLinks = [
 
 export const sitemapPageUrls = [
   '/',
-  '/opml/',
-  '/opml/viewer-parameters/',
+  '/opml.html',
+  '/opml/viewer-parameters.html',
   '/sitemap/',
-  '/sitemap/viewer-demo/',
-  '/sitemap/viewer-integration/'
+  '/sitemap/viewer-demo.html',
+  '/sitemap/viewer-integration.html'
 ];
