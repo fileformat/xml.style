@@ -1,0 +1,100 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import {
+  opmlDemoLinks,
+  opmlLinks,
+  productionUrl,
+  resourceLinks,
+  sharingTargets
+} from '../../data/site';
+
+const returnTo = encodeURIComponent(`${productionUrl}/opml/#demos`);
+---
+
+<MainLayout
+  title="OPML XSLT Stylesheets"
+  h1="OPML XSLT Stylesheets"
+  path="/opml/"
+  shareTargets={sharingTargets}
+  productionUrl={productionUrl}
+>
+  <h2>What is this?</h2>
+
+  <p>
+    <a href="https://en.wikipedia.org/wiki/OPML">OPML</a> (Outline Processor Markup Language) is a
+    simple XML format for outlines. It is commonly used to share lists of podcasts and Atom/RSS
+    news feeds.
+  </p>
+
+  <h2>How do I use it?</h2>
+
+  <p>
+    Download one of the <a href="#available_styles">available styles</a> and save it in the same
+    directory as your OPML file.
+  </p>
+
+  <p>
+    Add a line at the top of your OPML file. <a href="/#how">More details</a>
+  </p>
+
+  <h2 id="available_styles">Available Styles</h2>
+
+  <ul>
+    <li class="py-1">
+      <a href="plain-opml.xslt">plain-opml.xslt</a> - plain HTML (using
+      <code>&lt;details&gt;/&lt;summary&gt;</code>) with
+      <a href="https://watercss.kognise.dev/">water.css</a> classless CSS styling.
+    </li>
+    <li class="py-1">
+      <a href="linked-opml.xslt">linked-opml.xslt</a> - simple, with a button to go the
+      <a href="https://opml-viewer.fileformat.info/">OPML Viewer</a> at the top.
+      <a class="btn btn-sm btn-outline-primary" href="/demo/opml.xml">Demo</a>
+    </li>
+    <li class="py-1">
+      <a href="redirect-opml.xslt">redirect-opml.xslt</a> - JavaScript redirect to the
+      <a href="https://opml-viewer.fileformat.info/">OPML Viewer</a> with fallback to plain.
+    </li>
+  </ul>
+
+  <p>
+    <a href="https://github.com/fileformat/xml.style/tree/main/public/opml">Source</a> |
+    <a href="https://opml-viewer.fileformat.info/">OPML Viewer</a> |
+    <a href="viewer-parameters/">OPML Viewer Parameters</a>
+  </p>
+
+  <h2>Links</h2>
+  <ul>
+    {
+      opmlLinks.map((link) => (
+        <li class="py-1">
+          <a href={link.url}>{link.title}</a>
+          {link.text && <span> - {link.text}</span>}
+        </li>
+      ))
+    }
+    {
+      resourceLinks.map((link) => (
+        <li class="py-1">
+          <a href={link.url}>{link.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2 id="demos">Demos</h2>
+  <ul>
+    {
+      opmlDemoLinks.map((entry) => (
+        <li class="py-1">
+          <a
+            href={`https://opml-viewer.fileformat.info/view.html?showdebug=1&showmode=1&showlanguage=1&showexit=1&url=${encodeURIComponent(entry.url)}&return=${returnTo}`}
+          >
+            {entry.title}
+          </a>
+          {entry.notes && <span> - {entry.notes}</span>}
+          {entry.notesHtml && <span set:html={` - ${entry.notesHtml}`} />}
+        </li>
+      ))
+    }
+  </ul>
+</MainLayout>

@@ -1,0 +1,102 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../data/site';
+---
+
+<MainLayout
+  title="XML.Style: Make your XML files look better with an XSLT stylesheet"
+  h1="XML Styling with XSLT"
+  path="/"
+  shareTargets={sharingTargets}
+  productionUrl={productionUrl}
+>
+  <h2>What is this?</h2>
+
+  <p>
+    Most websites have several <code>.xml</code> files that are used by search engines and other
+    services to index and follow the site.
+  </p>
+
+  <p>
+    By default, these files look horrible when a human looks at them in a browser. But there is a
+    simple way to make them look better: add an XSLT line to your XML file!
+  </p>
+
+  <div class="row row-cols-1 row-cols-md-3">
+    {
+      formatCards.map((format) => (
+        <div class="col">
+          <div class="card m-3" style="width: 20rem;">
+            <div class="card-body p-0">
+              <h3 class="card-title p-3 border-bottom my-0">
+                <img src={format.icon} alt={format.title} class="pe-2" style="height: 1.5em;" />
+                {format.title}
+              </h3>
+              <div class="card-text px-3 py-2" set:html={format.textHtml} />
+              <div class="card-footer d-flex justify-content-between">
+                <a class="btn btn-outline-primary btn-sm" href={format.url}>
+                  Instructions
+                </a>
+                <a class="btn btn-outline-primary btn-sm" href={format.demo}>
+                  {format.demoText ?? 'Demo'}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <h2 id="how">How do I use it?</h2>
+
+  <p>
+    You need to have a XSLT stylesheet along with your <code>.xml</code> file. Download one of the
+    ones above or created your own with the help of the <a href="#links">resources linked below</a
+    >.
+  </p>
+
+  <p>
+    At the top of your XML file, it will look like:
+  </p>
+  <pre class="m-4 p-3 bg-light border rounded">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;data-depends-on-type&gt;
+...
+  </pre>
+
+  <p>
+    Add a line in the middle so it looks like:
+  </p>
+  <pre class="m-4 p-3 bg-light border rounded">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="my-downloaded-file.xslt"?&gt;
+&lt;data-depends-on-type&gt;
+...
+  </pre>
+
+  <h2 id="warn">Gotchas</h2>
+
+  <p>A couple key points that I learned the hard way:</p>
+
+  <ul>
+    <li class="py-1">You must serve the page with the content type <code>text/xml</code>.</li>
+    <li class="py-1">The stylesheet must be on the same host as the XML file.</li>
+  </ul>
+
+  <p>
+    Otherwise various browsers will ignore the stylesheet. See the
+    <a href="https://www.rss.style/content-type.html">test page</a> for more details.
+  </p>
+
+  <h2 id="links">Resources</h2>
+  <ul class="pb-3">
+    {
+      resourceLinks.map((link) => (
+        <li class="py-1">
+          <a href={link.url}>{link.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</MainLayout>
