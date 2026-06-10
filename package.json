@@ -6,7 +6,7 @@
     },
     "devDependencies": {
         "@cloudflare/workers-types": "^4.20240129.0",
-        "astro": "^5.12.1",
+        "astro": "^6.4.5",
         "typescript": "^5.3.3",
         "wrangler": "^4.32.0"
     },
