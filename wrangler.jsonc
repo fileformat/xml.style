@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "xml-style",
+  "main": "./src/worker.ts",
+  "compatibility_date": "2026-06-10",
+  "compatibility_flags": [
+    "nodejs_compat" // Keep full compatibility with Astro ecosystem
+  ],
+  "assets": {
+    "directory": "./dist", // Serve static Astro files
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

@@ -7,5 +7,5 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-npx astro dev --host --port 5000
+npx astro dev --port 5000
 
