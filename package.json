@@ -5,10 +5,11 @@
         "preview": "astro preview"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20240129.0",
+        "@cloudflare/workers-types": "^4.20260610.1",
+        "@types/node": "^25.9.2",
         "astro": "^6.4.5",
-        "typescript": "^5.3.3",
-        "wrangler": "^4.32.0"
+        "typescript": "^6.0.3",
+        "wrangler": "^4.99.0"
     },
     "dependencies": {
         "he": "^1.2.0"
