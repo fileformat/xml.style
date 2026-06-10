@@ -7,5 +7,5 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-jekyll serve --livereload --verbose --watch --source=docs --destination=dist --port 4000
+npx astro dev --host --port 4000
 

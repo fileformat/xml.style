@@ -6,9 +6,9 @@ set -o nounset
 
 echo "INFO: build starting at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-echo "INFO: Jekyll location = $(which jekyll)"
-echo "INFO: Jekyll version = $(jekyll --version)"
+echo "INFO: Astro location = $(which astro || true)"
+echo "INFO: Node version = $(node --version)"
 
-jekyll build --source docs
+npx astro build
 
 echo "INFO: build complete at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
