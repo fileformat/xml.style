@@ -45,6 +45,64 @@ document.onreadystatechange = async function () {
         h1.appendChild(document.createTextNode(title));
         body.appendChild(h1);
 
+        const getDirectOutlineChildren = function (el) {
+            return Array.from(el.children).filter((child) => child.localName === "outline");
+        };
+
+        const appendOutlineTitleWithLinks = function (containerEl, outlineEl, outlineTitle) {
+            containerEl.appendChild(document.createTextNode(outlineTitle));
+
+            const htmlUrl = outlineEl.getAttribute("htmlUrl");
+            if (htmlUrl) {
+                containerEl.appendChild(document.createTextNode(" "));
+                const htmlLink = document.createElementNS(NS, "a");
+                htmlLink.setAttribute("href", htmlUrl);
+                htmlLink.appendChild(document.createTextNode("website"));
+                containerEl.appendChild(htmlLink);
+            }
+
+            const xmlUrl = outlineEl.getAttribute("xmlUrl");
+            if (xmlUrl) {
+                containerEl.appendChild(document.createTextNode(" "));
+                const xmlLink = document.createElementNS(NS, "a");
+                xmlLink.setAttribute("href", xmlUrl);
+                xmlLink.appendChild(document.createTextNode("rss"));
+                containerEl.appendChild(xmlLink);
+            }
+        };
+
+        const buildOutlineDetails = function (outlineEl) {
+            const outlineTitle = outlineEl.getAttribute("title") || outlineEl.getAttribute("text") || "(untitled)";
+            const childOutlines = getDirectOutlineChildren(outlineEl);
+
+            if (childOutlines.length === 0) {
+                const leaf = document.createElementNS(NS, "div");
+                appendOutlineTitleWithLinks(leaf, outlineEl, outlineTitle);
+                return leaf;
+            }
+
+            const details = document.createElementNS(NS, "details");
+            const summary = document.createElementNS(NS, "summary");
+            appendOutlineTitleWithLinks(summary, outlineEl, outlineTitle);
+            details.appendChild(summary);
+
+            childOutlines.forEach((childOutline) => {
+                details.appendChild(buildOutlineDetails(childOutline));
+            });
+
+            return details;
+        };
+
+        const topLevelOutlines = getDirectOutlineChildren(bodyEl);
+        if (topLevelOutlines.length === 0) {
+            console.log("WARNING: <body> does not contain a child <outline> element");
+            return;
+        }
+
+        topLevelOutlines.forEach((outlineEl) => {
+            body.appendChild(buildOutlineDetails(outlineEl));
+        });
+
 
 
 
