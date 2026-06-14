@@ -1,12 +1,12 @@
 export const productionUrl = 'https://www.xml.style';
 
 export const sharingTargets = [
-  { name: 'x' },
+  { name: 'twitter' },
   { name: 'facebook' },
   { name: 'reddit' },
-  { name: 'threads' },
-  { name: 'bluesky' },
-  { name: 'mastodon' },
+  //{ name: 'threads' },
+  //{ name: 'bluesky' },
+  //{ name: 'mastodon' },
   { name: 'linkedin' },
   { name: 'tumblr' }
 ];

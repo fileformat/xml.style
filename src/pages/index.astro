@@ -4,8 +4,8 @@ import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../da
 ---
 
 <MainLayout
-  title="XML.Style: Make your XML files look better with an XSLT stylesheet"
-  h1="XML Styling with XSLT"
+  title="XML.Style: Make your XML files look better with Javascript"
+  h1="XML Styling with Javascript"
   path="/"
   shareTargets={sharingTargets}
   productionUrl={productionUrl}
@@ -19,7 +19,7 @@ import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../da
 
   <p>
     By default, these files look horrible when a human looks at them in a browser. But there is a
-    simple way to make them look better: add an XSLT line to your XML file!
+    simple way to make them look better: includes a single Javascript in your XML file!
   </p>
 
   <div class="row row-cols-1 row-cols-md-3">
@@ -51,9 +51,7 @@ import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../da
   <h2 id="how">How do I use it?</h2>
 
   <p>
-    You need to have a XSLT stylesheet along with your <code>.xml</code> file. Download one of the
-    ones above or created your own with the help of the <a href="#links">resources linked below</a
-    >.
+    You need to include a &lt;script&gt; tag in your XML file.
   </p>
 
   <p>
@@ -70,10 +68,14 @@ import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../da
   </p>
   <pre class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-stylesheet type="text/xsl" href="my-downloaded-file.xslt"?&gt;
 &lt;data-depends-on-type&gt;
+&lt;script src="https://www.xml.style/<i>xml-file-type</i>/basic.js" xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;/script&gt;
 ...
   </pre>
+
+<p>
+  Each type of XML file will have a different script, so replace <code><i>xml-file-type</i></code> with either <code>sitemap</code> or <code>opml</code>.
+</p>
 
   <h2 id="warn">Gotchas</h2>
 
@@ -81,22 +83,13 @@ import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../da
 
   <ul>
     <li class="py-1">You must serve the page with the content type <code>text/xml</code>.</li>
-    <li class="py-1">The stylesheet must be on the same host as the XML file.</li>
+    <li class="py-1">The namespace declaration (<code>xmlns=</code> above) must be <i>exactly</i> as above.</li>
+    <li class="py-1">You must have the <code>&lt;/script&gt;</code>.  You cannot have just the opening tag even
+        if it ends with <code>/&gt;</code>.
   </ul>
 
   <p>
-    Otherwise various browsers will ignore the stylesheet. See the
-    <a href="https://www.rss.style/content-type.html">test page</a> for more details.
+    Otherwise various browsers will either fail to run the script or complain about invalid XML.
   </p>
 
-  <h2 id="links">Resources</h2>
-  <ul class="pb-3">
-    {
-      resourceLinks.map((link) => (
-        <li class="py-1">
-          <a href={link.url}>{link.title}</a>
-        </li>
-      ))
-    }
-  </ul>
 </MainLayout>
