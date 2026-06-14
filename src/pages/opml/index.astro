@@ -87,7 +87,7 @@ const returnTo = encodeURIComponent(`${productionUrl}/opml/#demos`);
       opmlDemoLinks.map((entry) => (
         <li class="py-1">
           <a
-            href={`https://opml-viewer.fileformat.info/view.html?showdebug=1&showmode=1&showlanguage=1&showexit=1&url=${encodeURIComponent(entry.url)}&return=${returnTo}`}
+            href={`/opml/demo.xml?url=${encodeURIComponent(entry.url)}`}
           >
             {entry.title}
           </a>

@@ -1,6 +1,35 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../data/site';
+import { productionUrl, resourceLinks, sharingTargets } from '../data/site';
+
+export const formatCards = [
+  {
+    title: 'RSS/Atom Feeds',
+    icon: 'https://www.rss.style/favicon.svg',
+    textHtml:
+      'RSS and Atom <a href="https://en.wikipedia.org/wiki/Web_feed">news feeds</a> are a great way to get updates from your favorite sites.',
+    url: 'https://www.rss.style/',
+    demo: 'https://www.fileformat.info/news/rss.xml'
+  },
+  {
+    title: 'Sitemaps',
+    icon: '/sitemap/favicon.svg',
+    textHtml:
+      '<a href="https://en.wikipedia.org/wiki/Sitemaps">Sitemaps</a> (<code>sitemap.xml</code> files) help search engines index your site.',
+    url: '/sitemap/',
+    demo: '/sitemap/demo.xml'
+  },
+  {
+    title: 'Outlines',
+    icon: '/opml/favicon.svg',
+    textHtml:
+      '<a href="https://en.wikipedia.org/wiki/OPML">OPML Outlines</a> are a great way to share the sites in your news feed.',
+    url: '/opml/',
+    demo: '/opml/#demos',
+    demoText: 'Demos'
+  }
+];
+
 ---
 
 <MainLayout
@@ -64,7 +93,7 @@ import { formatCards, productionUrl, resourceLinks, sharingTargets } from '../da
   </pre>
 
   <p>
-    Add a line in the middle so it looks like:
+    Add a new third line so it looks like:
   </p>
   <pre class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;

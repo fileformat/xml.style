@@ -1,6 +1,7 @@
 {
     "scripts": {
         "dev": "astro dev --port 4000",
+        "wrangler-dev": "astro dev --port 5000 && npx wrangler dev --port 4000 --proxy http://localhost:5000",
         "build": "astro build",
         "preview": "astro preview"
     },
@@ -8,6 +9,8 @@
         "@cloudflare/workers-types": "^4.20260610.1",
         "@types/node": "^25.9.2",
         "astro": "^6.4.5",
+        "fast-xml-parser": "^5.8.0",
+        "nodemon": "^3.1.14",
         "typescript": "^6.0.3",
         "wrangler": "^4.99.0"
     },

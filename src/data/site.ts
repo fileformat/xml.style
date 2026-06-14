@@ -11,33 +11,6 @@ export const sharingTargets = [
   { name: 'tumblr' }
 ];
 
-export const formatCards = [
-  {
-    title: 'RSS/Atom Feeds',
-    icon: 'https://www.rss.style/favicon.svg',
-    textHtml:
-      'RSS and Atom <a href="https://en.wikipedia.org/wiki/Web_feed">news feeds</a> are a great way to get updates from your favorite sites.',
-    url: 'https://www.rss.style/',
-    demo: 'https://www.fileformat.info/news/rss.xml'
-  },
-  {
-    title: 'Sitemaps',
-    icon: 'https://opml-viewer.fileformat.info/favicon.svg',
-    textHtml:
-      '<a href="https://en.wikipedia.org/wiki/Sitemaps">Sitemaps</a> (<code>sitemap.xml</code> files) help search engines index your site.',
-    url: '/sitemap/',
-    demo: '/demo/sitemap.xml'
-  },
-  {
-    title: 'Outlines',
-    icon: 'https://opml-viewer.fileformat.info/favicon.svg',
-    textHtml:
-      '<a href="https://en.wikipedia.org/wiki/OPML">OPML Outlines</a> are a great way to share the sites in your news feed.',
-    url: '/opml/',
-    demo: '/opml/#demos',
-    demoText: 'Demos'
-  }
-];
 
 export const resourceLinks = [
   {

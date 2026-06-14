@@ -7,5 +7,5 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-npx astro dev --port 5000
+npx nodemon --watch src --watch public --ext astro,js,ts,txt,xml --exec "npx astro build"
 
