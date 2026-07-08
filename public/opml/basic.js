@@ -83,6 +83,7 @@ document.onreadystatechange = async function () {
 
             const details = document.createElementNS(NS, "details");
             const summary = document.createElementNS(NS, "summary");
+            summary.style.width = "100%";
             appendOutlineTitleWithLinks(summary, outlineEl, outlineTitle);
             details.appendChild(summary);
 
