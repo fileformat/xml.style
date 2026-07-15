@@ -15,7 +15,13 @@ document.onreadystatechange = async function () {
             return;
         }
 
-        var title = `OPML for ${window.location.hostname}`;
+        var titleEl = opmlEl.querySelector("head > title");  // avoid all the namespace stuff and just find based on attributes
+        if (!titleEl) {
+            console.log("WARNING: <head><title> element not found");
+            return;
+        }
+
+        var title = titleEl.textContent || `OPML for ${window.location.hostname}`;
 
         const NS = "http://www.w3.org/1999/xhtml"; // Soooooo important!
 
