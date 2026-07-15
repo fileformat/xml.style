@@ -2,7 +2,7 @@ import { sitemapDemo } from "./workers/sitemapDemo";
 import { opmlDemo } from "./workers/opmlDemo";
 
 export default {
-  async fetch(request, env, ctx): Promise<Response> {
+  async fetch(request:any, env:any, ctx:any): Promise<Response> {
     const url = new URL(request.url);
 
     if (url.pathname === "/sitemap/demo.xml") {
@@ -12,14 +12,14 @@ export default {
         return opmlDemo(request);
     }
 
-    // Example API route you can build out later:
-    if (url.pathname.startsWith("/api/")) {
-      return new Response(JSON.stringify({ hello: "from the worker!" }), {
+    // FALLBACK: 404
+    return new Response(JSON.stringify({
+        success: false,
+        message: "Invalid URL",
+        url: url.pathname
+    }), {
+        status: 404,
         headers: { "content-type": "application/json" },
-      });
-    }
-
-    // FALLBACK: If no worker routes match, serve the static Astro assets
-    return env.ASSETS.fetch(request);
+    });
   },
-} satisfies ExportedHandler<Env>;
+};

@@ -4,7 +4,6 @@ import {
   opmlDemoLinks,
   opmlLinks,
   productionUrl,
-  resourceLinks,
   sharingTargets
 } from '../../data/site';
 
@@ -12,8 +11,7 @@ const returnTo = encodeURIComponent(`${productionUrl}/opml/#demos`);
 ---
 
 <MainLayout
-  title="OPML XSLT Stylesheets"
-  h1="OPML XSLT Stylesheets"
+  title="OPML Styling with Javascript"
   path="/opml/"
   shareTargets={sharingTargets}
   productionUrl={productionUrl}
@@ -69,13 +67,6 @@ const returnTo = encodeURIComponent(`${productionUrl}/opml/#demos`);
         <li class="py-1">
           <a href={link.url}>{link.title}</a>
           {link.text && <span> - {link.text}</span>}
-        </li>
-      ))
-    }
-    {
-      resourceLinks.map((link) => (
-        <li class="py-1">
-          <a href={link.url}>{link.title}</a>
         </li>
       ))
     }

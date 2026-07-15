@@ -11,30 +11,6 @@ export const sharingTargets = [
   { name: 'tumblr' }
 ];
 
-
-export const resourceLinks = [
-  {
-    title: 'Mozilla Developer Network: XSLT reference',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/XSLT'
-  },
-  {
-    title: 'W3C: Official XSLT 3.0 specification',
-    url: 'https://www.w3.org/TR/xslt-30/'
-  },
-  {
-    title: 'Microsoft Learn: XSLT reference',
-    url: 'https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms256069(v=vs.100)'
-  },
-  {
-    title: 'W3Schools: XSLT tutorial',
-    url: 'https://www.w3schools.com/xml/xsl_intro.asp'
-  },
-  {
-    title: 'Online XSLT Playground',
-    url: 'https://xsltbin.ale.sh/'
-  }
-];
-
 export const sitemapLinks = [
   {
     title: 'Wikipedia entry for Sitemaps',
