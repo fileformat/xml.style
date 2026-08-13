@@ -1,4 +1,5 @@
-import { XMLBuilder, XMLParser } from "fast-xml-parser";
+import { XMLParser } from "fast-xml-parser";
+import XMLBuilder from "fast-xml-builder";
 
 export async function opmlDemo(request: Request): Promise<Response> {
     const url = new URL(request.url);
@@ -66,13 +67,20 @@ export async function opmlDemo(request: Request): Promise<Response> {
 
     const xmlDocument = parser.parse(xmltext);
 
-    if (xmlDocument.opml) {
-        xmlDocument.opml["script"] = {
-            "@_src": "/opml/basic.js",
-            "@_xmlns": "http://www.w3.org/1999/xhtml",
-            "#text": "",
-        };
+    if (!xmlDocument.opml) {
+        return new Response(null, {
+            status: 302,
+            headers: {
+                location: `/opml/demo.html?err=opml+xml+element+not+found&url=${encodeURIComponent(targetUrl)}`,
+            },
+        });
     }
+
+    xmlDocument.opml.script = {
+        "@_src": "/opml/basic.js",
+        "@_xmlns": "http://www.w3.org/1999/xhtml",
+        "#text": "",
+    };
 
     const builder = new XMLBuilder(xmlOptions);
     const newXmlText = builder.build(xmlDocument);

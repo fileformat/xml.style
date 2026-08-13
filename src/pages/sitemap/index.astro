@@ -1,86 +1,104 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import { productionUrl, sharingTargets, sitemapLinks } from '../../data/site';
+import MainLayout from "../../layouts/MainLayout.astro";
+import { productionUrl, sharingTargets } from "../../data/site";
+
+export const sitemapLinks = [
+    {
+        title: "Wikipedia entry for Sitemaps",
+        url: "https://en.wikipedia.org/wiki/Sitemaps",
+    },
+    {
+        title: "Sitmaps.org: the official specification for sitemap.xml",
+        url: "https://sitemaps.org/protocol.html",
+    },
+    {
+        title: "Yoast: Why you need a sitemap",
+        url: "https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/",
+    },
+    {
+        title: "Google: Building and submitting a sitemap",
+        url: "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+    },
+];
 ---
 
 <MainLayout
-  title="Sitemap XSLT Stylesheets"
-  path="/sitemap/"
-  shareTargets={sharingTargets}
-  productionUrl={productionUrl}
+    title="Sitemap.xml Styling with JavaScript"
+    path="/sitemap/"
+    shareTargets={sharingTargets}
+    productionUrl={productionUrl}
 >
-  <h2>What is this?</h2>
+    <h2>What is this?</h2>
 
-  <p>
-    Every website that wants to be found should have a <code>sitemap.xml</code> file that Google
-    (and everyone else) can use to help find and index all the pages.
-  </p>
+    <p>
+        Every website that wants to be found should have a <code
+            >sitemap.xml</code
+        > file that Google (and other search engines) can use to help find and index
+        all the pages.
+    </p>
 
-  <p>
-    By default, these files look horrible when a human looks at them in a browser. But there is a
-    simple way to make them look better: an <b>XSLT Stylesheet from XML.Style</b>!
-  </p>
+    <p>
+        By default, these files look horrible when a human looks at them in a
+        browser. But there is a simple way to make them look better: an <b
+            >XSLT Stylesheet from XML.Style</b
+        >!
+    </p>
 
-  <h2>How do I use it?</h2>
+    <h2>How do I use it?</h2>
 
-  <p>
-    Download one of the <a href="#available_styles">available styles</a> and save it as
-    <code>sitemap.xslt</code> in the same directory as your <code>sitemap.xml</code> file<br />
-    Note that the extension is <code>.xslt</code> and NOT <code>.xml</code>!<br /><br />
-  </p>
+    <p></p>
 
-  <p>
-    Add it to your <code>sitemap.xml</code> file. At the top of the file, it will look like:
-  </p>
-  <pre class="m-4 p-3 bg-light border rounded">
+    <p>
+        Add it to your <code>sitemap.xml</code> file. At the top of the file, it will
+        look like:
+    </p>
+    <pre
+        class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;urlset ...&gt;
 ...
   </pre>
 
-  <p>
-    Add a line in the middle so it looks like:
-  </p>
-  <pre class="m-4 p-3 bg-light border rounded">
+    <p>Add a line after the first xml tag (i.e. <code>urlset</code>):</p>
+    <pre
+        class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-stylesheet type="text/xsl" href="my-downloaded-file.xslt"?&gt;
 &lt;urlset ...&gt;
-...
-  </pre>
+&lt;script src=&quot;https://www.xml.style/sitemap/basic.js&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;/script&gt;
+    ...
+</pre>
 
-  <p><a href="/#warn">Troubleshooting</a></p>
+    <h2 id="available_styles">Available Styles</h2>
 
-  <h2 id="available_styles">Available Styles</h2>
+    <div class="alert alert-info">
+        Note: feel free to download them and host them yourself!
+    </div>
 
-  <ul>
-    <li class="py-1">
-      <a href="/sitemap/plain.xslt">plain.xslt</a> - just a plain bullet list of pages with classless CSS.
-    </li>
-    <li class="py-1">
-      <a href="/sitemap/linked.xslt">linked.xslt</a> - same as plain, but with a link to the
-      <a href="https://sitemap-viewer.fileformat.info/">Sitemap Viewer</a>.
-      <a class="ms-2 btn btn-sm btn-outline-primary" href="https://resolve.rs/sitemap.xml">Demo</a>
-    </li>
-    <li class="py-1">
-      <a href="/sitemap/redirect.xslt">redirect.xslt</a> - a JavaScript redirect to the
-      <a href="https://sitemap-viewer.fileformat.info/">Sitemap Viewer</a> with fallback to plain.
-    </li>
-  </ul>
-
-  <p>
-    <a href="https://github.com/fileformat/xml.style/tree/main/public/sitemap">Source</a> |
-    <a href="https://sitemap-viewer.fileformat.info/">Sitemap Viewer</a> |
-    <a href="/sitemap/viewer-integration.html">Sitemap Viewer Parameters</a>
-  </p>
-
-  <h2>Links</h2>
-  <ul>
-    {
-      sitemapLinks.map((link) => (
+    <ul>
         <li class="py-1">
-          <a href={link.url}>{link.title}</a>
+            <a href="/sitemap/basic.js">basic.js</a> - just a plain bullet list of
+            pages with classless CSS.
         </li>
-      ))
-    }
-  </ul>
+    </ul>
+
+    <p>
+        <a
+            href="https://github.com/fileformat/xml.style/tree/main/public/sitemap"
+            >Source</a
+        > <!-- |
+        <a href="https://sitemap-viewer.fileformat.info/">Sitemap Viewer</a> |
+        <a href="/sitemap/viewer-integration.html">Sitemap Viewer Parameters</a>
+    -->
+    </p>
+
+    <h2>Links</h2>
+    <ul>
+        {
+            sitemapLinks.map((link) => (
+                <li class="py-1">
+                    <a href={link.url}>{link.title}</a>
+                </li>
+            ))
+        }
+    </ul>
 </MainLayout>

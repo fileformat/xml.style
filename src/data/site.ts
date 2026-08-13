@@ -11,25 +11,6 @@ export const sharingTargets = [
   { name: 'tumblr' }
 ];
 
-export const sitemapLinks = [
-  {
-    title: 'Wikipedia entry for Sitemaps',
-    url: 'https://en.wikipedia.org/wiki/Sitemaps'
-  },
-  {
-    title: 'Sitmaps.org: the official specification for sitemap.xml',
-    url: 'https://sitemaps.org/protocol.html'
-  },
-  {
-    title: 'Yoast: Why you need a sitemap',
-    url: 'https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/'
-  },
-  {
-    title: 'Google: Building and submitting a sitemap',
-    url: 'https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap'
-  }
-];
-
 export const opmlLinks = [
   {
     title: 'Wikipedia OPML page',
