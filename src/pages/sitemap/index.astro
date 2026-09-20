@@ -68,6 +68,18 @@ export const sitemapLinks = [
     ...
 </pre>
 
+    <p>
+        If your <code>&lt;urlset&gt;</code> tag includes schema validation (i.e., it has an <code>xsi:schemaLocation</code> attribute),
+        you should change the schema location to point to xml.style:
+        <pre class="m-4 p-3 bg-light border rounded">
+&lt;urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.xml.style/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;</pre>
+    </p>
+
+    <p>Only change the second url: the first url (and the <code>xmlns</code> attribute) should remain pointing to
+        sitemaps.org.</p>
+
     <h2 id="available_styles">Available Styles</h2>
 
     <div class="alert alert-info">
