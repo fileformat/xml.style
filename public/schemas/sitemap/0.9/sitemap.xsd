@@ -19,7 +19,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="strict"/>
+        <xsd:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="1" processContents="skip" />
         <xsd:element name="url" type="tUrl" maxOccurs="unbounded"/>
       </xsd:sequence>
     </xsd:complexType>
