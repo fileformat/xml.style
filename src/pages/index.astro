@@ -1,6 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { productionUrl, sharingTargets } from "../data/site.js";
+import { productionUrl } from "../data/site.js";
 
 export const formatCards = [
     {
@@ -30,7 +30,7 @@ export const formatCards = [
 ];
 ---
 
-<MainLayout title="XML.Style: Make your XML files look better with Javascript" h1="XML Styling with Javascript" path="/" shareTargets={sharingTargets} productionUrl={productionUrl}>
+<MainLayout title="XML.Style: Make your XML files look better with Javascript" h1="XML Styling with Javascript" path="/" productionUrl={productionUrl}>
     <h2>What is this?</h2>
 
     <p>

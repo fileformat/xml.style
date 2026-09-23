@@ -1,6 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import { productionUrl, sharingTargets } from "../../data/site";
+import { productionUrl } from "../../data/site.js";
 
 export const sitemapLinks = [
     {
@@ -22,7 +22,7 @@ export const sitemapLinks = [
 ];
 ---
 
-<MainLayout title="Sitemap.xml Styling with JavaScript" path="/sitemap/" shareTargets={sharingTargets} productionUrl={productionUrl}>
+<MainLayout title="Sitemap.xml Styling with JavaScript" path="/sitemap/" productionUrl={productionUrl}>
     <h2>What is this?</h2>
 
     <p>

@@ -1,12 +1,11 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { productionUrl, sharingTargets } from '../../data/site';
+import { productionUrl } from '../../data/site.js';
 ---
 
 <MainLayout
   title="Sitemap Viewer Demo"
   path="/sitemap/viewer-demo.html"
-  shareTargets={sharingTargets}
   productionUrl={productionUrl}
 >
   <p>
