@@ -18,14 +18,6 @@ export default {
         return opmlRandomDemo(request);
     }
 
-    // FALLBACK: 404
-    return new Response(JSON.stringify({
-        success: false,
-        message: "Invalid URL",
-        url: url.pathname
-    }), {
-        status: 404,
-        headers: { "content-type": "application/json" },
-    });
+    return env.ASSETS.fetch(request);
   },
 };

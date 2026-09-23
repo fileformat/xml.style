@@ -87,8 +87,6 @@ export async function sitemapDemo(request: Request): Promise<Response> {
         });
     }
 
-    console.log(xmlDocument);
-
     delete xmlDocument["?xml-stylesheet"];
 
     xmlDocument.urlset.script = {

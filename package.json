@@ -1,13 +1,13 @@
 {
     "scripts": {
         "dev": "astro dev --port 4000",
-        "wrangler-dev": "astro dev --port 5000 && npx wrangler dev --port 4000 --proxy http://localhost:5000",
+        "wrangler-dev": "npm run build && wrangler dev --port 4000",
         "build": "astro build",
         "preview": "astro preview"
     },
     "devDependencies": {
         "@types/node": "^25.9.4",
-        "astro": "^6.4.5",
+        "astro": "^7.3.4",
         "fast-xml-parser": "^5.8.0",
         "nodemon": "^3.1.14",
         "typescript": "^6.0.3",
