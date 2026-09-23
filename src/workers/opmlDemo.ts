@@ -1,6 +1,19 @@
 import { XMLParser } from "fast-xml-parser";
 import XMLBuilder from "fast-xml-builder";
 
+import { opmlDemoLinks } from "../data/site.js";
+
+export async function opmlRandomDemo(request: Request): Promise<Response> {
+
+    var randomEntry = opmlDemoLinks[Math.floor(Math.random() * opmlDemoLinks.length)];
+
+    return new Response(null, {
+        status: 302,
+        headers: { location: `/opml/demo.xml?url=${encodeURIComponent(randomEntry.url)}` },
+    });
+}
+
+
 export async function opmlDemo(request: Request): Promise<Response> {
     const url = new URL(request.url);
     const query = url.searchParams;

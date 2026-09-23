@@ -22,26 +22,15 @@ export const sitemapLinks = [
 ];
 ---
 
-<MainLayout
-    title="Sitemap.xml Styling with JavaScript"
-    path="/sitemap/"
-    shareTargets={sharingTargets}
-    productionUrl={productionUrl}
->
+<MainLayout title="Sitemap.xml Styling with JavaScript" path="/sitemap/" shareTargets={sharingTargets} productionUrl={productionUrl}>
     <h2>What is this?</h2>
 
     <p>
-        Every website that wants to be found should have a <code
-            >sitemap.xml</code
-        > file that Google (and other search engines) can use to help find and index
-        all the pages.
+        Every website that wants to be found should have a <code>sitemap.xml</code> file that Google (and other search engines) can use to help find and index all the pages.
     </p>
 
     <p>
-        By default, these files look horrible when a human looks at them in a
-        browser. But there is a simple way to make them look better: an <b
-            >XSLT Stylesheet from XML.Style</b
-        >!
+        By default, these files look horrible when a human looks at them in a browser. But there is a simple way to make them look better: a <b>simple script from XML.Style</b>!
     </p>
 
     <h2>How do I use it?</h2>
@@ -49,19 +38,16 @@ export const sitemapLinks = [
     <p></p>
 
     <p>
-        Add it to your <code>sitemap.xml</code> file. At the top of the file, it will
-        look like:
+        Add it to your <code>sitemap.xml</code> file. At the top of the file, it will look like:
     </p>
-    <pre
-        class="m-4 p-3 bg-light border rounded">
+    <pre class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;urlset ...&gt;
 ...
   </pre>
 
     <p>Add a line after the first xml tag (i.e. <code>urlset</code>):</p>
-    <pre
-        class="m-4 p-3 bg-light border rounded">
+    <pre class="m-4 p-3 bg-light border rounded">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;urlset ...&gt;
 &lt;script src=&quot;https://www.xml.style/sitemap/basic.js&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;/script&gt;
@@ -69,38 +55,34 @@ export const sitemapLinks = [
 </pre>
 
     <p>
-        If your <code>&lt;urlset&gt;</code> tag includes schema validation (i.e., it has an <code>xsi:schemaLocation</code> attribute),
-        you should change the schema location to point to xml.style:
-        <pre class="m-4 p-3 bg-light border rounded">
+        If your <code>&lt;urlset&gt;</code> tag includes schema validation (i.e., it has an <code>xsi:schemaLocation</code> attribute), you should change the schema location to point to xml.style:
+        <pre
+            class="m-4 p-3 bg-light border rounded">
 &lt;urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.xml.style/schemas/sitemap/0.9/sitemap.xsd"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;</pre>
     </p>
 
-    <p>Only change the second url: the first url (and the <code>xmlns</code> attribute) should remain pointing to
-        sitemaps.org.</p>
+    <p>Only change the second url: the first url (and the <code>xmlns</code> attribute) should remain pointing to sitemaps.org.{' '}
+    This won't affect the display in your browser, but some validators may complain.
+    </p>
+
+    <p>
+        <a class="btn btn-primary" href="demo.html">Preview it on your Sitemap</a>
+    </p>
 
     <h2 id="available_styles">Available Styles</h2>
 
-    <div class="alert alert-info">
-        Note: feel free to download them and host them yourself!
-    </div>
+    <div class="alert alert-info">Note: feel free to download them and host them yourself!</div>
 
     <ul>
         <li class="py-1">
-            <a href="/sitemap/basic.js">basic.js</a> - just a plain bullet list of
-            pages with classless CSS.
+            <a href="/sitemap/basic.js">basic.js</a> - just a plain bullet list of pages with classless CSS.
         </li>
     </ul>
 
     <p>
-        <a
-            href="https://github.com/fileformat/xml.style/tree/main/public/sitemap"
-            >Source</a
-        > <!-- |
-        <a href="https://sitemap-viewer.fileformat.info/">Sitemap Viewer</a> |
-        <a href="/sitemap/viewer-integration.html">Sitemap Viewer Parameters</a>
-    -->
+        <a href="https://github.com/fileformat/xml.style/tree/main/public/sitemap">Source</a>
     </p>
 
     <h2>Links</h2>

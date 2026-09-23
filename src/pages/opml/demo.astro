@@ -1,0 +1,36 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Preview styling your OPML file - XML.Style" h1="OPML Style Demo" path="/opml/demo.html">
+    <div class="alert alert-danger d-none" role="alert"></div>
+    <form action="demo.xml" class="row justify-content-md-center mb-5" method="get">
+        <div class="col-sm-12 col-md-9 col-lg-6">
+            <div class="mb-3">
+                <label class="col-2 col-form-label" for="feedurl">OPML&nbsp;URL:</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="" required />
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" value="Make it pretty!" type="submit" />
+                <a href="/opml/" class="btn btn-outline-primary ms-2">Cancel</a>
+                <a href="/opml/random.go" class="btn btn-outline-secondary ms-2 float-end">Demo</a>
+            </div>
+        </div>
+    </form>
+    <script>
+        const qs = new URLSearchParams(window.location.search);
+        const error = qs.get("err");
+        const alert = document.querySelector(".alert-danger");
+
+        if (error && alert) {
+            alert.textContent = `ERROR: ${error}`;
+            alert.classList.remove("d-none");
+        }
+
+        const url = qs.get("url");
+        const urlInput = document.getElementById("url") as HTMLInputElement;
+        if (url && urlInput) {
+            urlInput.value = url;
+        }
+    </script>
+</MainLayout>
